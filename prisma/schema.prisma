@@ -32,4 +32,10 @@ model Post {
   authorId      String
   fovoritedBy   User?    @relation("FavoritePosts", fields: [favoritedById], references: [id])
   favoritedById String?
+  categories  Category[]
+}
+
+model Category {
+  id            String   @id @default(uuid())
+  posts Post[]
 }
