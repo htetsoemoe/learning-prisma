@@ -7,7 +7,15 @@ async function main() {
         data: {
             name: "john",
             email: "john@test.com",
-            age: 34
+            age: 34,
+            userPreference: { // relationship or nested property
+                create: {
+                    emailUpdates: true,
+                }
+            }
+        },
+        include: {  // if user have relationship with userPreference which will include
+            userPreference: true
         }
     })
     console.log(user)
